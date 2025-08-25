@@ -6,56 +6,70 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Solar Racking Dashboard - Logo Added</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
 <script src="https://unpkg.com/scrollreveal"></script>
 <style>
     body {
-      font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
       background: #f0f8f7;
       margin: 0;
-      padding: 20px;
     }
 
     .container-box {
-    background: linear-gradient(45deg, #d6f5f0, #235257);
-    background-size: 400% 400%;
-    animation: background-gradient 8s ease infinite;
-      padding: 30px;
-      border-radius: 20px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      padding: 30px;
       min-height: 95vh;
       overflow: hidden;
       display: flex;
       flex-direction: column;
+    background-color: #080606;  
     }
-      @keyframes background-gradient {
-    0% {
-        background-position: 0 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    
+ @media screen and (max-width: 1440px) {
+  #customQzToggle {
+    width: 13px !important;
+    height: 20px !important;
+    margin-right: 1px !important;
 }
-@-webkit-keyframes background-gradient {
-    0% {
-        background-position: 0 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
+@media screen and (max-width: 1318px) {
+  .forms-area {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  #customQzToggle
+  {
+    width: 16px !important;
+    height: 20px !important;
+    margin-right: 5px!important;
+  }
+  .container-box {
+    padding:30px 20px;
+  }
+}
+@media screen and (max-width: 686px) {
+.forms-area {
+grid-template-columns: 1fr !important;   
+}
+.header-section {
+  flex-direction:column !important ;
+  gap: 12px !important;
+}
+.calculate-btn {
+  width: 100%;
+}
+.project-location {
+    font-size: 26px !important;
+}
+}
     .header-section {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 20px;
       margin-bottom: 30px;
     }
     .header-section img {
@@ -69,7 +83,6 @@
   padding: 10px 20px;
   border-radius: 10px;
   width: 100%;
-  max-width: 70%;
   font-size: 1rem;
   transition: all 0.3s ease; 
     }
@@ -118,7 +131,8 @@ border: 2px solid #6ca0ff;
       gap: 20px;
     }
     .forms-area {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       flex-wrap: wrap;
       gap: 20px;
     }
@@ -146,7 +160,7 @@ border: 2px solid #6ca0ff;
    
 
     .live-tips-side {
-      width: 250px;
+      width: 100%;
       background: #d6f5f0;
       border-radius: 15px;
       padding: 20px;
@@ -169,10 +183,9 @@ border: 2px solid #6ca0ff;
 .bottom-right-box {
   background-color: #f8f9fa;
   padding: 20px;
-  border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000; /* Ensure it appears above other content */
-width: auto;  /* Set the width of the box */
+width: 200px;  /* Set the width of the box */
   height: 200px; /* Set the height of the box */
   overflow: hidden; /* Hide any content that exceeds the box */
 }
@@ -187,6 +200,7 @@ width: auto;  /* Set the width of the box */
     background-color: #fff;
     margin-bottom: 8px;
     border-radius: 7px;
+    background: #e9ecef;
 }
 
 .box-image {
@@ -195,26 +209,19 @@ width: auto;  /* Set the width of the box */
   object-fit: cover; /* Ensure the image fills the box, while maintaining its aspect ratio */
   border-radius: 15px; /* Optional: gives the image rounded corners */
 }
-#button {
+
+.calculate-btn {
   display: inline-block;
-  border: 0;
-  padding: 10px 25px;
-  font-size: 16px;
+  padding: 10px 60px;
   font-weight: bold;
   cursor: pointer;
-}
-.calculate-btn {
      border: none;
       border-radius: 5px;
       color: white;
-      font-weight: 600;
-      font-size: 16px;
-  background: DarkGreen;
+      font-size: 20px;
+  background: rgb(11, 83, 11);
 
-  box-shadow: 
-    8px 8px 16px rgba(0,0,0, 0.2),
-    inset -8px -8px 12px rgba(0,0,0, 0.2),
-    inset 8px 8px 12px rgba(255, 255, 255, 0.4);
+ 
 }
 .calculate-btn:hover {
   background: #00abb1;
@@ -253,12 +260,20 @@ width: auto;  /* Set the width of the box */
 .wrapper {
   position: relative;
 }
+.wrapper .unit:hover {
+background-color:#025a60 ;
+transition: all 0.3s ease-in;
+}
+.input-wrapper .unit:hover {
+background-color:#025a60 ;
+transition: all 0.3s ease-in;
+}
 .wrapper .unit{
-      position: absolute;
+    position: absolute;
     right: 0px;
     top: 44%;
     transform: translateY(-50%);
-    background: #b6b8bb;
+    background: #1a1414ef;
     color: white;
     height: 45px;
     width: 46px;
@@ -287,6 +302,7 @@ width: auto;  /* Set the width of the box */
       background: #d6f5f0;
       border-radius: 15px;
       padding: 20px;
+      display: none;
     }
 
 .input-wrapper {
@@ -302,7 +318,7 @@ position: absolute;
     right: 0px;
     top: 50%;
     transform: translateY(-50%);
-    background: #ccc;
+    background: #1a1414ef;
     color: white;
     width: 46px;
     height: 46px;
@@ -318,8 +334,7 @@ position: absolute;
     .select-wrapper {
       position: relative;
     } 
-    /* Flip arrow when open */
-   
+    /* Flip arrow type */
     .form-control::-webkit-inner-spin-button,
 .form-control::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -354,7 +369,7 @@ position: absolute;
       font-weight: 600;
       color: #115e75;
     }
-        .select-wrapper .arrow {
+    .select-wrapper .arrow {
       position: absolute;
       right: 12px;
       top: 46%;
@@ -364,127 +379,30 @@ position: absolute;
       color: #374151;
       pointer-events: none; /* click JS se handle hoga */
     }
-
+    
+.project-location {
+font-size: 20px;
+    font-weight: 700;
+    color: aliceblue;
+    min-width: 157px;
+    margin: 0;
+}
   </style>
 </head>
 <body>
 <div class="container-box">
 <div class="header-section">
-<h1>Project location:</h1>
-<p>hell</p>
+<h1 class="project-location">Project location</h1>
+
 <img alt="Design Devise Logo" src="data:image/jpeg;base64,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"/>
 
-<input class="search-bar " placeholder="Site location:" type="text"/>
+<input class="search-bar " placeholder="Search" type="text"/>
 
 <button class="calculate-btn" id="button"  onclick="calculate()">
  Calculate
 </button>
 </div>
-<div  style="margin-bottom: 30px;" id="forthCard" class="card-custom">
-<h5>Wind Parameters</h5>
-<!--  add  first box  -->
-  <div id="Box" >
-    <div class="d-flex flex-column w-100" >
-      <label for="input24" class="">Importance level</label>
-      <div class="select-wrapper">
-      <select class="form-control mb-2" data-cell="A18" data-tip="Hover to see more information about this field." id="input24">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-      </select>
-<span class="arrow">&#9662;</span>
-      </div>
-    </div>
-    <!-- desing box -->
-     <div id="Box"  >
-<div class="d-flex flex-column w-100" >
-  <label for="designLife" class="">Design life</label>
-  <div class="select-wrapper">
-  <select  class="form-control   mb-2" data-cell="C18" data-tip="Hover to see more information about this field." id="designLife">
-    <option>Temp. Works</option>
-    <option>5 years</option>
-    <option>25 years</option>
-    <option>50 years</option>
-  </select>
-  <span class="arrow">&#9662;</span>
-  </div>
 
-</div>
-</div>
-</div>
-<!-- add second box-->
-<div id="Box">
-<div class="d-flex flex-column w-100">
-<label for="input25" class="">wind region</label>
-<div class="select-wrapper">
-<select class="form-control mb-2" data-cell="E18" data-tip="Hover to see more information about this field." id="input25">
-  <option>A0</option>
-  <option>A1</option>
-  <option>A2</option>
-  <option>A3</option>
-  <option>A4</option>
-  <option>A5</option>
-  <option>B1</option>
-  <option>B2</option>
-  <option>C</option>
-  <option>D</option>
-  <option>NZ1</option>
-  <option>NZ2</option>
-  <option>NZ3</option>
-  <option>NZ4</option>
-</select>
-<span class="arrow">&#9662;</span>
-</div>
-</div>
-<div class="d-flex flex-column w-100" >
-<label class="">Ms factor</label>
- <input class="form-control mb-2" data-cell="AB3" data-tip="Hover to see more information about this field." id="input22" step="1" value="1.0" type="number"/>
-</div>
-</div>
-<!-- add  third box -->
-<div id="Box">
-  <div class="d-flex flex-column w-100" >
-<label class="">Terrain category</label>
-<input class="form-control mb-2" data-cell="K22" data-tip="Hover to see more information about this field." id="input28" step="0.01" type="number" value="1.0"/> 
-  </div>
-<div class="d-flex flex-column w-100" >
-<label class="">Mt factor</label>
- <input class="form-control mb-2" data-cell="AB3" data-tip="Hover to see more information about this field." id="input22" step="1" value="1.0" type="number"/>
-</div>
-</div>
-<!-- add forth box -->
- <div id="Box">
-<div class="d-flex flex-column w-100">
-<div class="input-width-unit">
-  <label for="calcQz" class="">Calculated qz </label>
-  <div  class="wrapper   d-flex align-items-center ">
-      <input maxlength="3" id="calcQz" class="form-control  mb-2" data-cell="AB3" data-tip="Hover to see more information about this field." id="input22" step="1" value="1.0" type="number"/>
-    <span class="unit">kPa</span>
-  </div>
-</div>
-</div>
-<div class="d-flex flex-column w-100">
-<div class="input-width-unit ">
-  <label for="customQzToggle" class="text-center d-inline-flex flex-nowrap">
-    <input  type="checkbox" name="" id="customQzToggle"> 
-   Calculated qz? 
-  </label>
-  <div  class="wrapper d-flex align-items-center ">
- <input id="customQz"  class="form-control  mb-2" data-cell="AB3" data-tip="Hover to see more information about this field."  id="input22" step="1" value="1.0" type="number"/>
-    <span class="unit">kPa</span>
-  </div>
-</div>
-</div>
- </div>
-<div class="input-width-unit">
-  <label class="" >Calculated qz pressure</label>
-  <div class="input-wrapper">
-    <div class="new">0.6</div>
-    <span class="unit">KPa</span>
-  </div>
-</div>
-<!--  -->
-</div>
 <div class="main-content">
 
 <div class="content-area">
@@ -512,7 +430,7 @@ position: absolute;
 </div>
 
 <label>Roof height (m) and type</label>
-<select class="form-control mb-2" data-cell="G11" data-tip="Hover to see more information about this field." id="input4">
+<select class=" form-control mb-2" data-cell="G11" data-tip="Hover to see more information about this field." id="input4">
 <option>h - Mean roof height</option>
 <option>hmin - Min roof height</option>
 <option>hmax - Max roof height</option>
@@ -561,7 +479,7 @@ position: absolute;
 </div>
 <!-- first end  -->
 <div id="secondCard" class="card-custom">
-<h5>Roof Details:</h5>
+<h5>Roof Details</h5>
 <label class="">Roof Shape</label>
 <select class="form-control mb-2" data-cell="A11" data-tip="Select the shape of the roof." id="input9"><option>Flat</option><option>Gable</option><option>Hip</option><option>Mono-slope</option><option>Cantilever</option><option>Open</option></select>
 <!--  -->
@@ -688,7 +606,111 @@ position: absolute;
 </div>
 <!--  -->
 </div>
+<div  style="margin-bottom: 30px;" id="forthCard" class="card-custom">
+<h5>Wind Parameters</h5>
+<!--  add  first box  -->
+  <div id="Box" >
+    <div class="d-flex flex-column w-100" >
+      <label for="input24" class="">Importance level</label>
+      <div class="select-wrapper">
+      <select class="form-control mb-2" data-cell="A18" data-tip="Hover to see more information about this field." id="input24">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select>
+<span class="arrow">&#9662;</span>
+      </div>
+    </div>
+    <!-- desing box -->
+     <div id="Box"  >
+<div class="d-flex flex-column w-100" >
+  <label for="designLife" class="">Design life</label>
+  <div class="select-wrapper">
+  <select  class="form-control   mb-2" data-cell="C18" data-tip="Hover to see more information about this field." id="designLife">
+    <option>Temp. Works</option>
+    <option>5 years</option>
+    <option>25 years</option>
+    <option>50 years</option>
+  </select>
+  <span class="arrow">&#9662;</span>
+  </div>
 
+</div>
+</div>
+</div>
+<!-- add second box-->
+<div id="Box">
+<div class="d-flex flex-column w-100">
+<label for="input25" class="">wind region</label>
+<div class="select-wrapper">
+<select class="form-control mb-2" data-cell="E18" data-tip="Hover to see more information about this field." id="input25">
+  <option>A0</option>
+  <option>A1</option>
+  <option>A2</option>
+  <option>A3</option>
+  <option>A4</option>
+  <option>A5</option>
+  <option>B1</option>
+  <option>B2</option>
+  <option>C</option>
+  <option>D</option>
+  <option>NZ1</option>
+  <option>NZ2</option>
+  <option>NZ3</option>
+  <option>NZ4</option>
+</select>
+<span class="arrow">&#9662;</span>
+</div>
+</div>
+<div class="d-flex flex-column w-100" >
+<label class="">Ms factor</label>
+ <input class="form-control mb-2" data-cell="AB3" data-tip="Hover to see more information about this field." id="input22" step="1" value="1.0" type="number"/>
+</div>
+</div>
+<!-- add  third box -->
+<div id="Box">
+  <div class="d-flex flex-column w-100" >
+<label class="">Terrain category</label>
+<input class="form-control mb-2" data-cell="K22" data-tip="Hover to see more information about this field." id="input28" step="0.01" type="number" value="1.0"/> 
+  </div>
+<div class="d-flex flex-column w-100" >
+<label class="">Mt factor</label>
+ <input class="form-control mb-2" data-cell="AB3" data-tip="Hover to see more information about this field." id="input22" step="1" value="1.0" type="number"/>
+</div>
+</div>
+<!-- add forth box -->
+ <div id="Box">
+<div class="d-flex flex-column w-100">
+<div class="input-width-unit">
+  <label for="calcQz" class="">Calculated qz </label>
+  <div  class="wrapper   d-flex align-items-center ">
+      <input maxlength="3" id="calcQz" disabled class="form-control  mb-2" data-cell="AB3" data-tip="Hover to see more information about this field." id="input22" step="1" value="1.0" type="number"/>
+    <span class="unit">kPa</span>
+  </div>
+</div>
+</div>
+<div class="d-flex flex-column w-100">
+<div class="input-width-unit ">
+  <label for="customQzToggle" class="text-center d-inline-flex flex-nowrap">
+    <input  type="checkbox" name="" id="customQzToggle"> 
+   Calculated qz? 
+  </label>
+  <div  class="wrapper d-flex align-items-center ">
+ <input id="customQz"  class="form-control  mb-2" data-cell="AB3" data-tip="Hover to see more information about this field."  id="input22" step="1" value="1.0" type="number"/>
+    <span class="unit">kPa</span>
+  </div>
+</div>
+</div>
+ </div>
+<div class="input-width-unit">
+  <label class="" >Calculated qz pressure</label>
+  <div class="input-wrapper">
+    <div class="new">0.6</div>
+    <span class="unit">KPa</span>
+  </div>
+</div>
+<!--  -->
+</div>
 </div>
 <!-- table-Section -->
 <div class="table-section">
@@ -874,6 +896,10 @@ position: absolute;
 </table>
 </div>
 </div>
+
+</div>
+
+<div  class="footer d-none position-fixed w-100 bottom-0" >
 <div class="live-tips-side">
 <h5>ℹ️  HELP</h5>
 <p id="data-tip">Hover over an input field to see more information.</p>
@@ -882,10 +908,6 @@ position: absolute;
 </div>
 </div>
 </div>
-</div>
-
-<div style="height: 17%; background-color: #ccc;" class="footer position-fixed w-100 bottom-0" >
-  <p style="font-size: x-large;" >HELP</p>
 </div>
 
 <script>
@@ -1089,14 +1111,13 @@ const installType = document.getElementById("installType");
   ScrollReveal({
   distance: '80px',
   duration: 2000,
-  reset: true,
+  reset: false,
 });
 
-ScrollReveal().reveal('#firstCard',  { origin: 'left', delay: 400   });
-ScrollReveal().reveal('#secondCard', { origin: 'left', delay: 800 });
-ScrollReveal().reveal('#thirdCard',  { origin: 'left', delay: 1200 });
-ScrollReveal().reveal('#forthCard',  { origin: 'left', delay: 0 });
-   ScrollReveal().reveal('.live-tips-side ', { distance: '586px', delay: 1000, origin: 'Right' });
+ScrollReveal().reveal('#firstCard',  { origin: 'left', delay: 0   });
+ScrollReveal().reveal('#secondCard', { origin: 'left', delay: 400 });
+ScrollReveal().reveal('#thirdCard',  { origin: 'left', delay: 800 });
+ScrollReveal().reveal('#forthCard',  { origin: 'left', delay: 1200 });
 </script>
 
 <script>
