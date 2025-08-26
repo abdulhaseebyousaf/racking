@@ -19,7 +19,7 @@
   <div class="main-Container">
 <div class="header-section">
 <h1 class="project-location">Project location</h1>
-<input class="search-bar "  type="text"/>
+<input class="search-bar" name="project_location" placeholder="" type="text"/>
 <button onclick="calculate() "  class="button">
     <span class="button_lg">
         <span class="button_sl"></span>
@@ -30,14 +30,14 @@
 <div class="main-content">
 <div class="content-area">
 <div class="forms-area">
-<div id="firstCard" class="card-custom">
+<div id="firstCard" class="card-custom" data-sr-id="0">
 <h5 style="font-weight: 600;" >Dimensions</h5>
 <!-- first-->
 <div class="input-with-unit">
   <label for="input2">Roof width</label>
   <div class="input-wrapper">
     <input 
-      class="form-control mb-2" data-cell="C11" data-tip="Building dimension perpendicular to wind direction." id="input2" step="0.01" type="number" value="500"
+      class="form-control mb-2"  name="roof_width" data-tip="Building dimension perpendicular to wind direction." id="input2" step="0.01" type="number" value="500"
     />
     <span class="unit">m</span>
   </div>
@@ -46,21 +46,21 @@
 <div class="input-with-unit">
 <label>Roof length</label>
   <div class="input-wrapper">
-    <input class="form-control mb-2" data-cell="E11" data-tip="Building dimension parallel to tilt panel direction. For example, if tilt panels are orientated N-S, d will be building dimension parallel to N-S." id="input3" step="0.01"  type="number" value="500">
+    <input class="form-control mb-2" name="roof_length"  data-tip="Building dimension parallel to tilt panel direction. For example, if tilt panels are orientated N-S, d will be building dimension parallel to N-S." id="input3" step="0.01"  type="number" value="500">
    <span class="unit">m</span>
   </div>
 </div>
   <label>Roof height (m) and type</label>
   <div class="select-wrapper" >
-    <select  class="  form-control mb-2" data-cell="G11" data-tip="Hover to see more information about this field." id="input4">
-      <option>h - Mean roof height</option>
-      <option>hmin - Min roof height</option>
-      <option>hmax - Max roof height</option>
+    <select  class="  form-control mb-2" name="height_type"  data-tip="Hover to see more information about this field." id="input4">
+      <option value="h - Mean roof height">h - Mean roof height</option>
+      <option value="hmax - Max roof height" >hmin - Min roof height</option>
+      <option value="hmin - Min roof height">hmax - Max roof height</option>
     </select>
   </div>
 <div class="input-width-unit">
   <div class="input-wrapper">
-    <input class="form-control mb-2" data-cell="J11" data-tip="Hover to see more information about this field." id="input5" step="0.01" type="number" value="10"/>
+    <input class="form-control mb-2" name="roof_height" data-tip="Hover to see more information about this field." id="input5"  type="number" value="10"/>
   <span class="unit" >m</span>
   </div>
 </div>
@@ -68,7 +68,7 @@
 <div class="input-width-unit">
   <label>Panel width</label>
   <div class="input-wrapper" >
-    <input class="form-control mb-2" data-cell="K6" data-tip="Hover to see more information about this field." id="input6" step="0.01" type="number" value="1000"/>
+    <input class="form-control mb-2" name="panel_width" data-tip="Hover to see more information about this field." id="input6"  type="number" value="1000"/>
     <span class="unit" >mm</span>
   </div>
 </div>
@@ -77,15 +77,16 @@
 <div class="input-width-unit">
   <label>Panel length</label>
   <div class="input-wrapper" >
-    <input class="form-control mb-2" data-cell="K7" data-tip="Hover to see more information about this field." id="input7" step="0.01" type="number" value="2000"/>
+    <input class="form-control mb-2" name="panel_length" data-tip="Hover to see more information about this field." id="input7"  type="number" value="2000"/>
     <span class="unit">mm</span>
   </div>
 </div>
 <!--  -->
+<!-- change inputid -->
 <div class="input-width-unit">
   <label>Panel weight</label>
   <div class="input-wrapper">
-    <input class="form-control mb-2" data-cell="K8" data-tip="Hover to see more information about this field." id="input8" step="0.01" type="number" value="25"/>
+    <input class="form-control mb-2" name="panel_weight" data-tip="Hover to see more information about this field." id="input888"  type="number" value="25"/>
     <span  class="unit">kg</span>
   </div>
 </div>
@@ -93,7 +94,7 @@
   <h4 style="margin-top:5px; margin-bottom: 0; font-weight: 600; font-size: 19px;"  class="" >Snow Load</h4>
   <label>Ground snow load (Sg)</label>
   <div class="input-wrapper">
-    <input class="form-control mb-2" data-cell="K8" data-tip="Hover to see more information about this field." id="input8" step="0.01" type="number" value="0.00"/>
+    <input class="form-control mb-2" name="snow_load" data-tip="Hover to see more information about this field." id="input8"  type="number" value="0.00"/>
     <span  class="unit">KPa</span>
   </div>
 </div>
@@ -101,40 +102,41 @@
 </input>
 </div>
 <!-- first end  -->
-<div id="secondCard" class="card-custom">
-<h5  style="font-weight: 600;" class="">Roof Details</h5>
+<div id="secondCard" class="card-custom" data-sr-id="2">
+<h5  style="font-weight: 600;"  class="">Roof Details</h5>
 <label class="">Roof shape</label>
 <div class="select-wrapper" >
-  <select class="form-control mb-2" data-cell="A11" data-tip="Select the shape of the roof." id="input9"><option>Flat</option><option>Gable</option><option>Hip</option><option>Mono-slope</option><option>Cantilever</option><option>Open</option></select>
+  <select class="form-control mb-2" name="roof_shape" data-tip="Select the shape of the roof." id="input9">
+    <option value="Flat">Flat</option>
+    <option value="Gable">Gable</option>
+    <option value="Hip">Hip</option>
+    <option value="Mono-slope">Mono-slope</option>
+    <option value="Cantilever">Cantilever</option>
+    <option value="Open">Open</option>
+  </select>
 </div>
 <!--  -->
 <div class="input-width-unit" >
   <label class="">Roof slope</label>
   <div class="input-wrapper" >
-    <input class="form-control mb-2" data-cell="A13" data-tip="If pitch &gt;= 10deg, only four zones are required as distance from roof edge is not applicable anymore." id="input10" step="1" type="number" value="3"/>
+    <input class="form-control mb-2" name="roof_pitch"  data-tip="If pitch &gt;= 10deg, only four zones are required as distance from roof edge is not applicable anymore." id="input10"  type="number" value="3"/>
   <span class="unit">deg</span>
   </div>
 </div>
 <!--  -->
 <label class="">Roof substrate material</label>
 <div class="select-wrapper" >
-  <select class="form-control mb-2" data-cell="A12" data-tip="Hover to see more information about this field." id="input11">
-    <option>Steel</option>
-    <option>Timber</option>
-    <option>Concrete</option>
+  <select class="form-control mb-2" name="roof_material" data-tip="Hover to see more information about this field." id="input11">
+    <option value="Steel">Steel</option>
+    <option value="Timber">Timber</option>
+    <option value="Concrete">Concrete</option>
   </select>
 </div>
 <!-- Battens spacing -->
 <div class="input-width-unit">
   <label class="">Max. Battens spacing</label>
   <div class="input-wrapper">
-    <input 
-      class="form-control mb-2" 
-      data-cell="A15" 
-      data-tip="Hover to see more information about this field." 
-      id="input12" 
-      step="1" 
-      type="number" 
+    <input class="form-control mb-2" name="purlin_spacing" data-tip="Hover to see more information about this field." id="input12" type="number" 
       value="1200"
     />
     <span class="unit">mm</span>
@@ -144,55 +146,56 @@
 <div class="input-width-unit">
   <label class="">Parapet height</label>
   <div class="input-wrapper" >
-    <input class="form-control mb-2" data-cell="A25" data-tip="Hover to see more information about this field." id="input13" step="1" type="number" value="0"/>
+    <input class="form-control mb-2" name="parapet_height" data-tip="Hover to see more information about this field." id="input13" type="number" value="0"/>
     <span class="unit" >mm</span>
   </div>
 </div>
 
 </div>
-<div id="thirdCard" class="card-custom">
+<!-- third card -->
+<div id="thirdCard" class="card-custom" data-sr-id="3">
 <h5 style="font-weight: 600;" class="">Mounting System Details</h5>
 <label class="">Installation type</label>
 <div class="select-wrapper" >
-<select  id="installType" class="form-control mb-2" data-tip="Hover to see more information about this field." data-cell="A6">
-  <option>A-Flush Mount - Rails Perp to Purlins</option>
-  <option>B-Flush Mount - Rails Directly over Purlins</option>
-  <option>C-Tilt - Rails Perp to Purlins</option>
-  <option>D-Tilt - Rails Directly over Purlins</option>
+<select  id="installType" class="form-control mb-2" name="installation_type" data-tip="Hover to see more information about this field." >
+<option value="A-Flush Mount - Rails Perp to Purlins">A-Flush Mount - Rails Perp to Purlins</option>
+<option value="B-Flush Mount - Rails Directly over Purlins">B-Flush Mount - Rails Directly over Purlins</option>
+<option value="C-Tilt - Rails Perp to Purlins">C-Tilt - Rails Perp to Purlins</option>
+<option value="D-Tilt - Rails Directly over Purlins">D-Tilt - Rails Directly over Purlins</option>
 </select>
 </div>
 <!-- add new label -->
   <label class="">Manufacturer</label>
-  <input style="background-color:#e9ecef;"  class="form-control mb-2" data-cell="H15" data-tip="If panels are back to back, then full loading should be considered (Enter shading distance = 0)" disabled id="input21" step="1" type="text" value="Schletter"/>
+  <input style="background-color:#e9ecef;"  class="form-control mb-2" name="manufacturer" data-tip="If panels are back to back, then full loading should be considered (Enter shading distance = 0)" disabled id="input21"  type="text" value="Schletter"/>
 <label class="">Fasteners</label>
 <div class="select-wrapper">
-<select class="form-control mb-2 select" data-cell="G6" data-tip="Hover to see more information about this field." id="input18" >
- <option>001-Kliplok High Strength EMU</option>
-  <option>002-Kliplok Classic EMU</option>
-  <option>003-SingleFix Pro</option>
-  <option>004-TrimFix EMU</option>
-  <option>005-KingFix EMU</option>
-  <option>006-FixW-1876 Corrugated EMU</option>
-  <option>007-Longline Seam Clamps 503 AL EMU</option>
-  <option>008-SingleFix HU EMU</option>
-  <option>009-S-5-R465 Mini</option>
-  <option>010-S-5-S Mini</option>
-  <option>100-RapidPro L - Configuration A</option>
-  <option>101-RapidPro L - Configuration B</option>
-  <option>102-Rapid2+ Pro SML</option>
-  <option>103-Klicktop</option>
-  <option>104-Roof Hook Standard Proline</option>
+<select class="form-control mb-2 select" name="fasteners"  data-tip="Hover to see more information about this field." id="input18" >
+<option value="001-Kliplok High Strength EMU">001-Kliplok High Strength EMU</option>
+<option value="002-Kliplok Classic EMU">002-Kliplok Classic EMU</option>
+<option value="003-SingleFix Pro">003-SingleFix Pro</option>
+<option value="004-TrimFix EMU">004-TrimFix EMU</option>
+<option value="005-KingFix EMU">005-KingFix EMU</option>
+<option value="006-FixW-1876 Corrugated EMU">006-FixW-1876 Corrugated EMU</option>
+<option value="007-Longline Seam Clamps 503 AL EMU">007-Longline Seam Clamps 503 AL EMU</option>
+<option value="008-SingleFix HU EMU">008-SingleFix HU EMU</option>
+<option value="009-S-5-R465 Mini">009-S-5-R465 Mini</option>
+<option value="010-S-5-S Mini">010-S-5-S Mini</option>
+<option value="100-RapidPro L - Configuration A">100-RapidPro L - Configuration A</option>
+<option value="101-RapidPro L - Configuration B">101-RapidPro L - Configuration B</option>
+<option value="102-Rapid2+ Pro SML">102-Rapid2+ Pro SML</option>
+<option value="103-Klicktop">103-Klicktop</option>
+<option value="104-Roof Hook Standard Proline">104-Roof Hook Standard Proline</option>
 </select>
 </div>
 <label class="">
        Zoning method
       </label>
       <div class="select-wrapper" >
-<select class="form-control mb-2" data-cell="E6" data-tip="Hover to see more information about this field." id="input19">
-<option>
+<select class="form-control mb-2" name="zoning_method" data-tip="Hover to see more information about this field." id="input19">
+<option value=" 3-Zone Method">
         3-Zone Method
        </option>
-<option>
+<option value="4-Zone Method">
         4-Zone Method
        </option>
       </select>
@@ -201,7 +204,7 @@
 <div class="input-width-unit" >
   <label class=""> Shading distance</label>
   <div class="input-wrapper">
-    <input id="shading"  class="form-control mb-2" data-cell="H15" data-tip="If panels are back to back, then full loading should be considered (Enter shading distance = 0)" id="input21" step="1" type="number" value="0"/>
+    <input id="shading"  class="form-control mb-2" name="shading_distance" data-tip="If panels are back to back, then full loading should be considered (Enter shading distance = 0)" id="input21" disabled type="number" value="0"/>
     <span class="unit" >mm</span>
   </div>
 </div>
@@ -209,11 +212,11 @@
 <label  class="">Apply ASCE 7 Section
 29.4.3?</label>
 <div class="select-wrapper" >
-  <select id="applay" class=" form-control mb-2" data-cell="L32" data-tip="Hover to see more information about this field." id="input22">
-    <option>
+  <select id="applay" class=" form-control mb-2" name="ASCE" data-tip="Hover to see more information about this field." id="input22">
+    <option value="Yes">
       Yes
     </option>
-    <option>
+    <option value="No">
       No
     </option>
   </select>
@@ -221,26 +224,27 @@
 <div class="input-width-unit" >
   <label class="">Tilt angle</label>
   <div class="input-wrapper" >
-    <input id="tiltAngle" class="form-control mb-2" data-cell="AB3" data-tip="Hover to see more information about this field." id="input22" step="1" value="5" type="number"/>
+    <input id="tiltAngle" class="form-control mb-2" name="tilt_angle" data-tip="Hover to see more information about this field." id="input22"  value="5" type="number"/>
   <span class="unit" >deg</span>
   </div>
 </div>
 
   <label class="">No. of panels in a group</label>
-  <input id="panelsGroup" class="form-control mb-2" data-cell="A28" data-tip="Use only 1 panel as tributary area as analysis is being performed per panel" id="input14" step="1" type="number" value="1"/>
+  <input id="panelsGroup" class="form-control mb-2" name="no_panels_group"  data-tip="Use only 1 panel as tributary area as analysis is being performed per panel" id="input14" step="1" type="number" value="1"/>
 <!--  -->
 </div>
-<div   id="forthCard" class="card-custom">
+<!--forth Card  -->
+<div   id="forthCard" class="card-custom" data-sr-id="4">
 <h5 style="font-weight: 600;">Wind Parameters</h5>
 <!--  add  first box  -->
   <div id="Box" >
     <div class="d-flex flex-column w-100" >
       <label for="input24" class="">Importance level</label>
       <div class="select-wrapper">
-      <select class="form-control mb-2" data-cell="A18" data-tip="Hover to see more information about this field." id="input24">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
+      <select class="form-control mb-2" name="importance_level" data-tip="Hover to see more information about this field." id="input24">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
       </select>
 <span class="arrow">&#9662;</span>
       </div>
@@ -250,11 +254,11 @@
 <div class="d-flex flex-column w-100" >
   <label for="designLife" class="">Design life</label>
   <div class="select-wrapper">
-  <select  class="form-control   mb-2" data-cell="C18" data-tip="Hover to see more information about this field." id="designLife">
-    <option>Temp. Works</option>
-    <option>5 years</option>
-    <option>25 years</option>
-    <option>50 years</option>
+  <select  class="form-control   mb-2" name="design_life" data-tip="Hover to see more information about this field." id="designLife">
+    <option value="Temp. Works">Temp. Works</option>
+    <option  value="5 years">5 years</option>
+     <option value="25 years" selected>25 years</option>
+  <option value="50 years">50 years</option>
   </select>
   <span class="arrow">&#9662;</span>
   </div>
@@ -267,39 +271,39 @@
 <div class="d-flex flex-column w-100">
 <label for="input25" class="">Wind region</label>
 <div class="select-wrapper">
-<select class="form-control mb-2" data-cell="E18" data-tip="Hover to see more information about this field." id="input25">
-  <option>A0</option>
-  <option>A1</option>
-  <option>A2</option>
-  <option>A3</option>
-  <option>A4</option>
-  <option>A5</option>
-  <option>B1</option>
-  <option>B2</option>
-  <option>C</option>
-  <option>D</option>
-  <option>NZ1</option>
-  <option>NZ2</option>
-  <option>NZ3</option>
-  <option>NZ4</option>
+<select class="form-control mb-2" name="wind_region" data-tip="Hover to see more information about this field." id="input25">
+  <option value="A0">A0</option>
+  <option value="A1">A1</option>
+  <option value="A2">A2</option>
+  <option value="A3">A3</option>
+  <option value="A4">A4</option>
+  <option value="A5">A5</option>
+  <option value="B1">B1</option>
+  <option value="B2">B2</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+  <option value="NZ1">NZ1</option>
+  <option value="NZ2">NZ2</option>
+  <option value="NZ3">NZ3</option>
+  <option value="NZ4">NZ4</option>
 </select>
 <span class="arrow">&#9662;</span>
 </div>
 </div>
 <div class="d-flex flex-column w-100" >
 <label class="">Ms factor</label>
- <input class="form-control mb-2" data-cell="AB3" data-tip="Hover to see more information about this field." id="input22" step="1" value="1.0" type="number"/>
+ <input class="form-control mb-2" name="ms_factor" data-tip="Hover to see more information about this field." id="input22"  value="1.0" type="number"/>
 </div>
 </div>
 <!-- add  third box -->
 <div id="Box">
   <div class="d-flex flex-column w-100" >
 <label class="">Terrain category</label>
-<input class="form-control mb-2" data-cell="K22" data-tip="Hover to see more information about this field." id="input28" step="0.01" type="number" value="1.0"/> 
+<input class="form-control mb-2" name="terrain_category" data-tip="Hover to see more information about this field." id="input28" type="number" value="2.0"/> 
   </div>
 <div class="d-flex flex-column w-100" >
 <label class="">Mt factor</label>
- <input class="form-control mb-2" data-cell="AB3" data-tip="Hover to see more information about this field." id="input22" step="1" value="1.0" type="number"/>
+ <input class="form-control mb-2" name="mt_factor" data-tip="Hover to see more information about this field." id="input22"  value="1.0" type="number"/>
 </div>
 </div>
 <!-- add forth box -->
@@ -308,19 +312,19 @@
 <div class="input-width-unit">
   <label for="calcQz" class="">Calculated qz </label>
   <div  class="wrapper   d-flex align-items-center ">
-      <input maxlength="3" id="calcQz" disabled class="form-control  mb-2" data-cell="AB3" data-tip="Hover to see more information about this field." id="input22" step="1" value="1.0" type="number"/>
+      <input maxlength="3" id="calcQz" disabled class="form-control  mb-2" name="calculated_qz" data-tip="Hover to see more information about this field." id="input22" step="1" value="1.0" type="number"/>
     <span class="unit">kPa</span>
   </div>
 </div>
 </div>
 <div class="d-flex flex-column w-100">
 <div class="input-width-unit ">
-  <label for="customQzToggle" class="text-center d-inline-flex flex-nowrap">
-    <input  type="checkbox" name="" id="customQzToggle"> 
+  <label for="customQzToggle"  class="text-center d-inline-flex flex-nowrap">
+    <input  type="checkbox" name="custom_check" id="customQzToggle"> 
    Custom qz? 
   </label>
   <div  class="wrapper d-flex align-items-center ">
- <input id="customQz"  class="form-control  mb-2" data-cell="AB3" data-tip="Hover to see more information about this field."  id="input22" step="1" value="1.0" type="number"/>
+ <input id="customQz"  class="form-control  mb-2" name="custom_qz" data-tip="Hover to see more information about this field."  id="input22"  value="1.0" type="number"/>
     <span class="unit">kPa</span>
   </div>
 </div>
@@ -328,9 +332,8 @@
  </div>
 </div>
 </div>
-<!-- -->
- <!--table-Section  make new div -->
-<div  class="table-section ">
+ <!--table-Section -->
+<div  class="table-section" data-sr-id="5">
 <div class="outer">
   <!-- LEFT: Roof Zone + SLS Pressure -->
   <div>
@@ -338,27 +341,27 @@
     <div  class="grid cols-2">
       <div>
         <div class="label">Roof Zone</div>
-        <div class="stack">
-          <input value="–"  type="text" readonly>
-          <input value="–" type="text" readonly>
-          <input value="–" type="text" readonly>
-          <input value="–" type="text" readonly>
-          <input value="–" type="text" readonly>
-          <input value="–" type="text" readonly>
-          <input value="–" type="text" readonly>
+           <div class="stack">
+          <input value="–" name="zone_1" type="text" readonly="">
+          <input value="–" name="zone_2" type="text" readonly="">
+          <input value="–" name="zone_3" type="text" readonly="">
+          <input value="–" name="zone_4" type="text" readonly="">
+          <input value="–" name="zone_5" type="text" readonly="">
+          <input value="–" name="zone_6" type="text" readonly="">
+          <input value="–" name="zone_7" type="text" readonly="">
         </div>
       </div>
 
       <div>
         <div class="label">SLS Pressure (kPa)</div>
-        <div class="stack">
-          <input value="0" type="text" readonly>
-          <input value="0" type="text" readonly>
-          <input value="0" type="text" readonly>
-          <input value="0" type="text" readonly>
-          <input value="0" type="text" readonly>
-          <input value="0" type="text" readonly>
-          <input value="0" type="text" readonly>
+       <div class="stack">
+          <input value="0" name="sls_1" type="text" readonly="">
+          <input value="0" name="sls_2" type="text" readonly="">
+          <input value="0" name="sls_3" type="text" readonly="">
+          <input value="0" name="sls_4" type="text" readonly="">
+          <input value="0" name="sls_5" type="text" readonly="">
+          <input value="0" name="sls_6" type="text" readonly="">
+          <input value="0" name="sls_7" type="text" readonly="">
         </div>
       </div>
     </div>
@@ -373,13 +376,13 @@
         <div class="subhead">
           <span>Rail Type</span>
         </div>
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
+       <input type="number" name="on_number_1" value="2">
+        <input type="number" name="on_number_2" value="2">
+        <input type="number" name="on_number_3" value="2">
+        <input type="number" name="on_number_4" value="2">
+        <input type="number" name="on_number_5" value="2">
+        <input type="number" name="on_number_6" value="2">
+        <input type="number" name="on_number_7" value="2">
       </div>
 
       <div class="stack">
@@ -388,31 +391,31 @@
         </div>
         <div class="select-wrapper" >
           <select class="form-control RailOption" >
-            <option>Pro35</option>
-            <option>Pro50</option>
-            <option>FixZ Pro</option>
+            <option value="Pro35">Pro35</option>
+            <option value="Pro50">Pro50</option>
+            <option value="FixZ Pro">FixZ Pro</option>
           </select>
           <span   style="top: 23px;"class="arrow anoter-arrow">▾</span>
         </div>
-        <input value="0" type="text" readonly>
-        <input value="0" type="text" readonly>
-        <input value="0" type="text" readonly>
-        <input value="0" type="text" readonly>
-        <input value="0" type="text" readonly>
-        <input value="0" type="text" readonly>
+        <input value="" name="on_rail_2" type="text" readonly="">
+        <input value="" name="on_rail_3" type="text" readonly="">
+        <input value="" name="on_rail_4" type="text" readonly="">
+        <input value="" name="on_rail_5" type="text" readonly="">
+        <input value="" name="on_rail_6" type="text" readonly="">
+        <input value="" name="on_rail_7" type="text" readonly="">
       </div>
 
       <div class="stack">
         <div class="subhead">
       <span>Spacing <p style="margin-bottom: 0px; margin-left: 2px; ">(mm)</p></span>
     </div>
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
+       <input type="number" name="on_spacing_1" value="">
+        <input type="number" name="on_spacing_2" value="">
+        <input type="number" name="on_spacing_3" value="">
+        <input type="number" name="on_spacing_4" value="">
+        <input type="number" name="on_spacing_5" value="">
+        <input type="number" name="on_spacing_6" value="">
+        <input type="number" name="on_spacing_7" value="">
       </div>
     </div>
   </div>
@@ -426,13 +429,13 @@
         <div class="subhead">
         <span>No. of Rails</span>
       </div>
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
+         <input type="number" name="off_number_1" value="2">
+        <input type="number" name="off_number_2" value="2">
+        <input type="number" name="off_number_3" value="2">
+        <input type="number" name="off_number_4" value="2">
+        <input type="number" name="off_number_5" value="2">
+        <input type="number" name="off_number_6" value="2">
+        <input type="number" name="off_number_7" value="2">
       </div>
 
       <div class="stack">
@@ -440,26 +443,26 @@
 
       <span>Rail Type</span>
     </div>
-        <input value="0"  type="text" readonly>
-        <input value="0" type="text" readonly>
-        <input value="0" type="text" readonly>
-        <input value="0" type="text" readonly>
-        <input value="0" type="text" readonly>
-        <input value="0" type="text" readonly>
-        <input value="0" type="text" readonly>
+         <input value="" name="off_rail_1" type="text" readonly="">
+        <input value="" name="off_rail_2" type="text" readonly="">
+        <input value="" name="off_rail_3" type="text" readonly="">
+        <input value="" name="off_rail_4" type="text" readonly="">
+        <input value="" name="off_rail_5" type="text" readonly="">
+        <input value="" name="off_rail_6" type="text" readonly="">
+        <input value="" name="off_rail_7" type="text" readonly="">
       </div>
 
       <div class="stack">
     <div class="subhead">
       <span>Spacing <p style="margin-bottom: 0px; margin-left: 2px; ">(mm)</p></span>
     </div>
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
-        <input type="number" value="2">
+        <input type="number" name="off_spacing_1" value="">
+        <input type="number" name="off_spacing_2" value="">
+        <input type="number" name="off_spacing_3" value="">
+        <input type="number" name="off_spacing_4" value="">
+        <input type="number" name="off_spacing_5" value="">
+        <input type="number" name="off_spacing_6" value="">
+        <input type="number" name="off_spacing_7" value="">
       </div>
     </div>
   </div>
@@ -486,7 +489,6 @@
     </div>
   </div>
 </div>
-
 <script src="script.js"></script>
 
 

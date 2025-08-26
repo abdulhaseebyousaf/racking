@@ -102,46 +102,37 @@ ScrollReveal().reveal('.table-section',{ origin: 'bottom', delay: 1200 });
       syncCustomToCalculated();
     }
   });
+
+  
 //   id user choose the option C || D then user add the data
 const installType = document.getElementById("installType");
-  const shading = document.getElementById("shading");
-  const tilt = document.getElementById("tiltAngle");
-  const applay = document.getElementById("applay");
-  const panelsGroup = document.getElementById("panelsGroup");
-  
+const tilt = document.getElementById("tiltAngle");
+const applay = document.getElementById("applay");
+const panelsGroup = document.getElementById("panelsGroup");
+const shading = document.getElementById("shading");
+
+function controlShading() {
+  const val = (installType?.value || "").trim().toUpperCase();
+  const isC = val.startsWith("C");
+  shading.disabled = !isC;   // C par enable, otherwise disable
+  if (!isC) shading.value = 0; // optional: C na ho to reset
+}
+
+// initial run + change par update
+document.addEventListener("DOMContentLoaded", controlShading);
+installType.addEventListener("change", controlShading);
+
   function toggleFields() {
     if (installType.value.startsWith("C") || installType.value.startsWith("D")) {
-      shading.disabled = false;
       applay.disabled = false;
       tilt.disabled = false;
       panelsGroup.disabled = false;
     } else {
-      shading.disabled = true;
       tilt.disabled = true;
       panelsGroup.disabled = true;
       applay.disabled = true;
     }
   }
-  // initial run
-  toggleFields();
-
-  // update on change
-  installType.addEventListener("change", toggleFields);
-//   for arrow rotation and choose option tu to show in box 
-  function toggleFields() {
-    if (installType.value.startsWith("C") || installType.value.startsWith("D")) {
-      shading.disabled = false;
-      applay.disabled = false;
-      tilt.disabled = false;
-      panelsGroup.disabled = false;
-    } else {
-      shading.disabled = true;
-      tilt.disabled = true;
-      panelsGroup.disabled = true;
-      applay.disabled = true;
-    }
-  }
-
   // initial run
   toggleFields();
 
