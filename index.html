@@ -11,7 +11,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
-<link rel="stylesheet" href="style.css">
 <script src="https://unpkg.com/scrollreveal"></script>
 
 </head>
@@ -50,9 +49,6 @@ grid-template-columns: 1fr !important;
   gap: 12px !important;
 }
 
-.search-bar {
-  width: 100% !important;
-}
 .button {
   right: inherit !important;
 
@@ -124,11 +120,7 @@ font-size: 12px !important;
        .form .area {
             gap: 15px !important;
        }
-       .bottom-right-box {
-    padding: 9px !important;
-    width: 139px !important;
-    height: 139px !important;
- }
+ 
  .stack {
     gap: 10px !important;
 }
@@ -177,15 +169,15 @@ font-size: 12px !important;
   outline: none;
   padding: 10px 20px;
   border-radius: 10px;
-  width: 75.3%;
+  width: 100%;
   font-size: 1rem;
   transition: all 0.3s ease; 
     }
     .search-bar:focus {
-  background: #ffffff;                      /* white background */
-  border: 2px solid #22b2c5;                /* green border */
-  box-shadow: 0 0 0 4px rgba(34,197,94,0.2);/* subtle green glow */
-  transform: scale(1.01);                   /* thoda zoom */
+  background: #ffffff;                     
+  border: 2px solid #22b2c5;             
+  box-shadow: 0 0 0 4px rgba(34,197,94,0.2);
+  transform: scale(1.01);                   
 }
     .search-bar:hover {
 border: 2px solid #6ca0ff;
@@ -271,8 +263,7 @@ border: 2px solid #6ca0ff;
    }
 /* Scrollbar overall track */
 ::-webkit-scrollbar {
-  width: 5px;     /* vertical scrollbar width */
-  height: 5px;    /* horizontal scrollbar height */
+  width: 0px;     /* vertical scrollbar width */
 }
 
 /* Scrollbar track (background) */
@@ -295,6 +286,8 @@ border: 2px solid #6ca0ff;
        background: #a4dfd5;
     border-radius: 15px;
     padding: 20px;  
+  max-height: 150px;
+overflow-y: scroll;
     }
     .live-tips-side p {
       flex-grow: 1;
@@ -305,18 +298,18 @@ border: 2px solid #6ca0ff;
 
 .live-tips-side img {
   width: 100%; /* Adjust the image to fill the box */
-  max-height: 200px; /* Adjust max height if needed */
+  height: 200px; /* Adjust max height if needed */
   object-fit: cover; /* Ensure the image fits nicely inside the box */
 }
 
 .bottom-right-box {
-  background-color: #f8f9fa;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000; /* Ensure it appears above other content */
 width: 200px;  /* Set the width of the box */
   height: 200px; /* Set the height of the box */
   overflow: hidden; /* Hide any content that exceeds the box */
+}
+.bottom-right-box img {
+  border-radius: 5px;
 }
 .new{
   height: 45px;
@@ -361,7 +354,7 @@ width: 200px;  /* Set the width of the box */
   cursor: pointer;
   position: fixed;   /* 🔴 relative → fixed */
   right: 30px;       /* right side se distance */
-  bottom: 22%;      /* niche corner me (agar upar chahiye to top:20px use karo) */
+  bottom: 25%;      /* niche corner me (agar upar chahiye to top:20px use karo) */
   padding: 5px;
   width: 13.2%;
   min-width: 200px;
@@ -529,7 +522,7 @@ transition: all 0.3s ease-in;
       background: #d6f5f0;
       border-radius: 15px;
       padding: 20px;
-      margin-bottom: 195px;
+      margin-bottom: 130px;
       transition: margin-bottom .25s ease;
     }
 
@@ -731,11 +724,61 @@ text-align: center;
   .live-tips-side[data-collapsed="true"] .chevron {
     transform: rotate(-90deg);
   }
+  /* Wrapper columns spacing & responsiveness */
+.dd-columns {
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Cards / blocks look */
+.dd-col {
+  background: #111;                  /* foreground bg replacement */
+  color: #b7c1cc;                    /* cyan-bluish-gray replacement */
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+/* Headings */
+.dd-heading {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;                   /* ~ h5 size */
+  line-height: 1.3;
+  letter-spacing: .02em;
+  background: transparent;           /* remove theme bg */
+  color: #b7c1cc;
+  text-transform: uppercase;
+}
+
+/* Paragraphs */
+.dd-text {
+  font-size: 0.8rem;                 /* as per inline style */
+  line-height: 1.6;
+  margin: 0;
+  color: #b7c1cc;
+}
+
+/* Right aligned variants */
+.dd-right {
+  text-align: right;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 782px) {          /* WP admin breakpoint-friendly */
+  .dd-columns {
+    flex-wrap: wrap;
+  }
+  .dd-col {
+    flex-basis: 100% !important;
+  }
+  .dd-right {
+    text-align: left;                /* better readability on mobile */
+  }
+}
+
   </style>
   <div class="container-box">
   <div class="main-Container">
 
-</div>
 <div class="header-section">
 <h1 class="project-location">Project location</h1>
 <input class="search-bar" name="project_location" placeholder="" type="text"/>
@@ -746,6 +789,7 @@ text-align: center;
     </span>
 </button>
 </div>
+
 <div class="main-content">
 <div class="content-area">
 <div class="forms-area">
@@ -756,7 +800,7 @@ text-align: center;
   <label for="input2">Roof width</label>
   <div class="input-wrapper">
     <input 
-      class="form-control mb-2"  name="roof_width" data-tip="Building dimension perpendicular to wind direction." id="input2"  type="number" value="500"
+      class="form-control mb-2"  name="roof_width" data-tip="Building dimension perpendicular to wind direction." id="input2"  type="number" value="20"
     />
     <span class="unit">m</span>
   </div>
@@ -766,7 +810,7 @@ text-align: center;
 <div class="input-with-unit">
 <label>Roof length</label>
   <div class="input-wrapper">
-    <input class="form-control mb-2" name="roof_length"  data-tip="Building dimension parallel to tilt panel direction. For example, if tilt panels are orientated N-S, d will be building dimension parallel to N-S." id="input3"   type="number" value="500">
+    <input class="form-control mb-2" name="roof_length"  data-tip="Building dimension parallel to tilt panel direction. For example, if tilt panels are orientated N-S, d will be building dimension parallel to N-S." id="input3"   type="number" value="20">
    <span class="unit">m</span>
   </div>
   <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
@@ -791,7 +835,7 @@ text-align: center;
 <div class="input-width-unit">
   <label>Panel width</label>
   <div class="input-wrapper" >
-    <input class="form-control mb-2" name="panel_width" data-tip="Hover to see more information about this field." id="input6"  type="number" value="1000"/>
+    <input class="form-control mb-2" name="panel_width" data-tip="Hover to see more information about this field." id="input6"  type="number" value="1134"/>
     <span class="unit" >mm</span>
      <img class="preview-src" style="display:none;"  alt="Roof width preview"  src="https://images.unsplash.com/photo-1526779259212-939e64788e3c" alt="">
 
@@ -837,7 +881,7 @@ text-align: center;
 <div class="select-wrapper" >
   <select class="form-control mb-2" name="roof_shape" data-tip="Select the shape of the roof." id="input9">
     <option value="Flat">Flat</option>
-    <option value="Gable">Gable</option>
+    <option value="Gable" selected>Gable</option>
     <option value="Hip">Hip</option>
     <option value="Mono-slope">Mono-slope</option>
     <option value="Cantilever">Cantilever</option>
@@ -846,14 +890,7 @@ text-align: center;
       <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 <!--  -->
-<div class="input-width-unit" >
-  <label class="">Roof slope</label>
-  <div class="input-wrapper" >
-    <input class="form-control mb-2" name="roof_pitch"  data-tip="If pitch &gt;= 10deg, only four zones are required as distance from roof edge is not applicable anymore." id="input10"  type="number" value="3"/>
-  <span class="unit">deg</span>
-  </div>
-      <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
-</div>
+
 <!--  -->
 <label class="">Roof substrate material</label>
 <div class="select-wrapper" >
@@ -864,9 +901,17 @@ text-align: center;
   </select>
       <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
+<div class="input-width-unit" >
+  <label class="">Roof slope</label>
+  <div class="input-wrapper" >
+    <input class="form-control mb-2" name="roof_pitch"  data-tip="If pitch &gt;= 10deg, only four zones are required as distance from roof edge is not applicable anymore." id="input10"  type="number" value="3"/>
+  <span class="unit">deg</span>
+  </div>
+      <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
+</div>
 <!-- Battens spacing -->
 <div class="input-width-unit">
-  <label class="">Max. Battens spacing</label>
+  <label class="">Purlin spacing</label>
   <div class="input-wrapper">
     <input class="form-control mb-2" name="purlin_spacing" data-tip="Hover to see more information about this field." id="input12" type="number" 
       value="1200"
@@ -944,10 +989,10 @@ text-align: center;
       <div class="select-wrapper" >
 <select class="form-control mb-2" name="zoning_method" data-tip="Hover to see more information about this field." id="input19">
 <option value=" 3-Zone Method">
-        3-Zone Method
+        AS1170 Sec B.6.1
        </option>
 <option value="4-Zone Method">
-        4-Zone Method
+       AS1170 Sec 5
        </option>
       </select>
           <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
@@ -1154,7 +1199,7 @@ text-align: center;
     <div class="grid cols-3">
       <div class="stack">
         <div class="subhead">
-          <span>Rail Type</span>
+          <span>No. of Rails</span>
         </div>
        <input type="number" name="on_number_1" value="2">
         <input type="number" name="on_number_2" value="2">
@@ -1167,7 +1212,7 @@ text-align: center;
 
       <div class="stack">
         <div class="subhead">
-          <span>No. of Rails</span>
+          <span>Rail Type</span>
         </div>
         <div class="select-wrapper" >
           <select class="form-control RailOption" >
@@ -1287,6 +1332,19 @@ ScrollReveal().reveal('#forthCard',  { origin: 'left', delay: 1000 });
 ScrollReveal().reveal('.table-section',{ origin: 'bottom', delay: 1200 });
  // Change this to your API URL when you deploy to your server/domain.
   // For local testing, use the HTTP port you saw in Visual Studio (e.g., 5232).
+// ===== Optional: API base =====
+const API_BASE = "https://racking.designdevise.com.au";
+
+// ===== Uncaught error suppression (console me errors na aayein) =====
+window.addEventListener('error', function (e) {
+  e.preventDefault();
+  return true; // stop reporting to console
+});
+window.addEventListener('unhandledrejection', function (e) {
+  e.preventDefault();
+});
+
+// ===== Your calculate() with ONLY the requested additions =====
 async function calculate() {
   const loading = document.getElementById("loading");
   if (loading) loading.style.display = "block";
@@ -1310,11 +1368,13 @@ async function calculate() {
 
     if (!res.ok) {
       const txt = await res.text();
+      // alert ko rehne dete hain — bas error throw nahi hoga
       alert('Error from server: ' + txt);
       return;
     }
 
     const data = await res.json();
+
     // 3) Fill outputs (elements with data-cell but not inputs)
     document.querySelectorAll('[data-cell]').forEach(el => {
       const addr = el.getAttribute('data-cell');
@@ -1322,19 +1382,26 @@ async function calculate() {
       if (addr in data) el.textContent = (data[addr] ?? '').toString();
     });
 
-    // 🔥 Extra step: stack inputs hide if value == "0" or "*"
+    // 4) 🔥 Extra: .stack ke inputs ko value ke hisaab se dikhana/chhupana
+    //    (sirf yahi naya step add kiya gaya hai)
     document.querySelectorAll('.stack input').forEach(inp => {
-      if (inp.value === "0" || inp.value === "*") {
-        inp.style.display = "none";
-      } else {
-        inp.style.display = ""; // reset if not 0/*
+      try {
+        const v = (inp && typeof inp.value === 'string') ? inp.value.trim() : '';
+        if (v === "0" || v === "*") {
+          if (inp && inp.style) inp.style.display = "none";
+        } else {
+          if (inp && inp.style) inp.style.display = ""; // reset show
+        }
+      } catch (_) {
+        // silently ignore
       }
     });
 
   } catch (e) {
-    alert('Request failed: ' + e.message);
+    // Same behavior as pehle: alert, par uncaught error bubble nahi hoga
+    alert('Request failed: ' + (e && e.message ? e.message : e));
   } finally {
-    if (loading) loading.style.display = "none";
+    if (loading && loading.style) loading.style.display = "none";
   }
 }
 
@@ -1557,7 +1624,8 @@ btn.addEventListener('mouseleave', () => {
   wrap.appendChild(btn);
   panel.id = 'tipsPanel';
   panel.style.transition = 'max-height .35s ease';
-  const ORIGINAL_FIXED_HEIGHT = parseInt(getComputedStyle(panel).height, 10) || 130;
+  const ORIGINAL_FIXED_HEIGHT = 150;
+
 
   function setExpandedHeight() {
 
@@ -1565,8 +1633,8 @@ btn.addEventListener('mouseleave', () => {
     panel.style.maxHeight = 'none';
     const full = panel.scrollHeight;
 
-    panel.style.maxHeight = (full || ORIGINAL_FIXED_HEIGHT) + 'px';
-    return full;
+ panel.style.maxHeight = ORIGINAL_FIXED_HEIGHT + 'px'; // hamesha 150px
+  return ORIGINAL_FIXED_HEIGHT;
   }
 
   function setTableMarginCollapsed() {
@@ -1586,20 +1654,23 @@ btn.addEventListener('mouseleave', () => {
   });
   ro.observe(panel);
 
-  function collapse() {
-    btn.setAttribute('aria-expanded','false');
-    label.textContent = 'Show';
-    panel.style.maxHeight = '0px';
-    chevron.style.transform = 'rotate(-90deg)';
-    setTableMarginCollapsed(); 
-  }
-  function expand() {
-    btn.setAttribute('aria-expanded','true');
-    label.textContent = 'Hide';
-    setExpandedHeight();
-    chevron.style.transform = 'rotate(0deg)';
-    setTableMarginDefault();   
-  }
+function collapse() {
+  btn.setAttribute('aria-expanded','false');
+  label.textContent = 'Show';
+  panel.style.maxHeight = '0px';
+  panel.style.marginTop = '0px';   // collapsed state margin
+  chevron.style.transform = 'rotate(-90deg)';
+  setTableMarginCollapsed();
+}
+
+function expand() {
+  btn.setAttribute('aria-expanded','true');
+  label.textContent = 'Hide';
+  setExpandedHeight(); // always 150px
+  panel.style.marginTop = '10px';    // expanded state margin
+  chevron.style.transform = 'rotate(0deg)';
+  setTableMarginDefault();
+}
 
   btn.addEventListener('click', () => {
     const isOpen = btn.getAttribute('aria-expanded') === 'true';
