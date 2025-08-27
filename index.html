@@ -774,13 +774,14 @@ text-align: center;
       <option value="hmax - Max roof height" >hmin - Min roof height</option>
       <option value="hmin - Min roof height">hmax - Max roof height</option>
     </select>
+      <img class="preview-src" style="display:none;"
+         src="https://images.unsplash.com/photo-1526779259212-939e64788e3c" alt="Preview ">
   </div>
 <div class="input-width-unit">
   <div class="input-wrapper">
     <input class="form-control mb-2" name="roof_height" data-tip="Hover to see more information about this field." id="input5"  type="number" value="10"/>
   <span class="unit" >m</span>
   </div>
-  <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d" alt="Preview 1">
 </div>
 <!--  -->
 <div class="input-width-unit">
@@ -788,7 +789,8 @@ text-align: center;
   <div class="input-wrapper" >
     <input class="form-control mb-2" name="panel_width" data-tip="Hover to see more information about this field." id="input6"  type="number" value="1000"/>
     <span class="unit" >mm</span>
-    <img style="display: none;" class="preview-src" src="" alt="Preview 2">
+     <img class="preview-src" style="display:none;"  alt="Roof width preview"  src="https://images.unsplash.com/photo-1526779259212-939e64788e3c" alt="">
+
   </div>
 </div>
 
@@ -799,6 +801,8 @@ text-align: center;
     <input class="form-control mb-2" name="panel_length" data-tip="Hover to see more information about this field." id="input7"  type="number" value="2000"/>
     <span class="unit">mm</span>
   </div>
+        <img class="preview-src" style="display:none;"
+         src="https://images.unsplash.com/photo-1526779259212-939e64788e3c" alt="Preview ">
 </div>
 <!--  -->
 <!-- change inputid -->
@@ -808,6 +812,7 @@ text-align: center;
     <input class="form-control mb-2" name="panel_weight" data-tip="Hover to see more information about this field." id="input888"  type="number" value="25"/>
     <span  class="unit">kg</span>
   </div>
+    <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 <div class="input-width-unit">
   <h4 style="margin-top:5px; margin-bottom: 0; font-weight: 600; font-size: 19px;"  class="" >Snow Load</h4>
@@ -816,6 +821,7 @@ text-align: center;
     <input class="form-control mb-2" name="snow_load" data-tip="Hover to see more information about this field." id="input8"  type="number" value="0.00"/>
     <span  class="unit">KPa</span>
   </div>
+    <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 
 </input>
@@ -833,6 +839,7 @@ text-align: center;
     <option value="Cantilever">Cantilever</option>
     <option value="Open">Open</option>
   </select>
+      <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 <!--  -->
 <div class="input-width-unit" >
@@ -841,6 +848,7 @@ text-align: center;
     <input class="form-control mb-2" name="roof_pitch"  data-tip="If pitch &gt;= 10deg, only four zones are required as distance from roof edge is not applicable anymore." id="input10"  type="number" value="3"/>
   <span class="unit">deg</span>
   </div>
+      <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 <!--  -->
 <label class="">Roof substrate material</label>
@@ -850,6 +858,7 @@ text-align: center;
     <option value="Timber">Timber</option>
     <option value="Concrete">Concrete</option>
   </select>
+      <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 <!-- Battens spacing -->
 <div class="input-width-unit">
@@ -860,6 +869,7 @@ text-align: center;
     />
     <span class="unit">mm</span>
   </div>
+      <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 <!--  -->
 <div class="input-width-unit">
@@ -868,8 +878,8 @@ text-align: center;
     <input class="form-control mb-2" name="parapet_height" data-tip="Hover to see more information about this field." id="input13" type="number" value="0"/>
     <span class="unit" >mm</span>
   </div>
+  <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
-
 </div>
 <!-- third card -->
 <div id="thirdCard" class="card-custom" data-sr-id="3">
@@ -882,10 +892,27 @@ text-align: center;
 <option value="C-Tilt - Rails Perp to Purlins">C-Tilt - Rails Perp to Purlins</option>
 <option value="D-Tilt - Rails Directly over Purlins">D-Tilt - Rails Directly over Purlins</option>
 </select>
+    <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 <!-- add new label -->
   <label class="">Manufacturer</label>
-  <input style="background-color:#e9ecef;"  class="form-control mb-2" name="manufacturer" data-tip="If panels are back to back, then full loading should be considered (Enter shading distance = 0)" disabled id="input21"  type="text" value="Schletter"/>
+<div class="d-flex flex-column w-100">
+  <input style="background-color:#e9ecef;" 
+         class="form-control mb-2" 
+         name="manufacturer" 
+         id="input21" 
+         type="text" 
+         value="Schletter"
+         data-tip="If panels are back to back, then full loading should be considered (Enter shading distance = 0)" 
+         disabled="">
+
+  <!-- Add preview image here -->
+  <img class="preview-src" 
+       style="display:none;" 
+       src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" 
+       alt="Manufacturer preview">
+</div>
+ 
 <label class="">Fasteners</label>
 <div class="select-wrapper">
 <select class="form-control mb-2 select" name="fasteners"  data-tip="Hover to see more information about this field." id="input18" >
@@ -905,6 +932,7 @@ text-align: center;
 <option value="103-Klicktop">103-Klicktop</option>
 <option value="104-Roof Hook Standard Proline">104-Roof Hook Standard Proline</option>
 </select>
+    <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 <label class="">
        Zoning method
@@ -918,6 +946,7 @@ text-align: center;
         4-Zone Method
        </option>
       </select>
+          <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
       </div>
 <!-- shadding -->
 <div class="input-width-unit" >
@@ -926,6 +955,7 @@ text-align: center;
     <input id="shading"  class="form-control mb-2" name="shading_distance" data-tip="If panels are back to back, then full loading should be considered (Enter shading distance = 0)" id="input21" disabled type="number" value="0"/>
     <span class="unit" >mm</span>
   </div>
+    <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 <!-- move here -->
 <label  class="">Apply ASCE 7 Section
@@ -939,6 +969,7 @@ text-align: center;
       No
     </option>
   </select>
+    <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 <div class="input-width-unit" >
   <label class="">Tilt angle</label>
@@ -946,11 +977,28 @@ text-align: center;
     <input id="tiltAngle" class="form-control mb-2" name="tilt_angle" data-tip="Hover to see more information about this field." id="input22"  value="5" type="number"/>
   <span class="unit" >deg</span>
   </div>
+    <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 
-  <label class="">No. of panels in a group</label>
-  <input id="panelsGroup" class="form-control mb-2" name="no_panels_group"  data-tip="Use only 1 panel as tributary area as analysis is being performed per panel" id="input14" step="1" type="number" value="1"/>
+ <label class="">No. of panels in a group</label>
+<div class="d-flex flex-column w-100">
+  <input id="panelsGroup" 
+         class="form-control mb-2" 
+         name="no_panels_group" 
+         data-tip="Use only 1 panel as tributary area as analysis is being performed per panel" 
+         step="1" 
+         type="number" 
+         value="1" 
+         disabled="">
+
+  <!-- yahan preview image add ki -->
+  <img class="preview-src" 
+       style="display:none;" 
+       src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29" 
+       alt="Panels group preview">
+</div>
 <!--  -->
+    <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 <!--forth Card  -->
 <div   id="forthCard" class="card-custom" data-sr-id="4">
@@ -962,9 +1010,10 @@ text-align: center;
       <div class="select-wrapper">
       <select class="form-control mb-2" name="importance_level" data-tip="Hover to see more information about this field." id="input24">
         <option value="1">1</option>
-        <option value="2">2</option>
+        <option value="2" selected>2</option>
         <option value="3">3</option>
       </select>
+      <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 <span class="arrow">&#9662;</span>
       </div>
     </div>
@@ -979,6 +1028,7 @@ text-align: center;
      <option value="25 years" selected>25 years</option>
   <option value="50 years">50 years</option>
   </select>
+   <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
   <span class="arrow">&#9662;</span>
   </div>
 
@@ -1006,12 +1056,14 @@ text-align: center;
   <option value="NZ3">NZ3</option>
   <option value="NZ4">NZ4</option>
 </select>
+ <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 <span class="arrow">&#9662;</span>
 </div>
 </div>
 <div class="d-flex flex-column w-100" >
 <label class="">Ms factor</label>
  <input class="form-control mb-2" name="ms_factor" data-tip="Hover to see more information about this field." id="input22"  value="1.0" type="number"/>
+ <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 </div>
 <!-- add  third box -->
@@ -1019,10 +1071,12 @@ text-align: center;
   <div class="d-flex flex-column w-100" >
 <label class="">Terrain category</label>
 <input class="form-control mb-2" name="terrain_category" data-tip="Hover to see more information about this field." id="input28" type="number" value="2.0"/> 
+ <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1526779259212-939e64788e3c" alt="" srcset="">
   </div>
 <div class="d-flex flex-column w-100" >
 <label class="">Mt factor</label>
  <input class="form-control mb-2" name="mt_factor" data-tip="Hover to see more information about this field." id="input22"  value="1.0" type="number"/>
+ <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 </div>
 <!-- add forth box -->
@@ -1034,6 +1088,7 @@ text-align: center;
       <input maxlength="3" id="calcQz" disabled class="form-control  mb-2" name="calculated_qz" data-tip="Hover to see more information about this field." id="input22" step="1" value="1.0" type="number"/>
     <span class="unit">kPa</span>
   </div>
+   <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 </div>
 <div class="d-flex flex-column w-100">
@@ -1045,6 +1100,8 @@ text-align: center;
   <div  class="wrapper d-flex align-items-center ">
  <input id="customQz"  class="form-control  mb-2" name="custom_qz" data-tip="Hover to see more information about this field."  id="input22"  value="1.0" type="number"/>
     <span class="unit">kPa</span>
+    <!-- add by defalut image  -->
+    <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29" alt="" srcset="">
   </div>
 </div>
 </div>
@@ -1209,6 +1266,16 @@ text-align: center;
     </div>
   </div>
 </div>
+<button id="openModal">Open Modal</button>
+
+  <div id="modalOverlay" class="modal-overlay d-none">
+    <div class="modal">
+      <h2>Hidden Modal</h2>
+      <p>Yeh modal by default hidden tha.</p>
+      <button class="close-btn" id="closeModal">Close</button>
+    </div>
+  </div>
+
 <script>
     // animations effect
   ScrollReveal({
@@ -1224,49 +1291,57 @@ ScrollReveal().reveal('#forthCard',  { origin: 'left', delay: 1000 });
 ScrollReveal().reveal('.table-section',{ origin: 'bottom', delay: 1200 });
  // Change this to your API URL when you deploy to your server/domain.
   // For local testing, use the HTTP port you saw in Visual Studio (e.g., 5232).
-  const API_BASE = "https://racking.designdevise.com.au";
-  async function calculate() {
-    const loading = document.getElementById("loading");
-    if (loading) loading.style.display = "block";
+async function calculate() {
+  const loading = document.getElementById("loading");
+  if (loading) loading.style.display = "block";
 
-    try {
-      // 1) Gather inputs (all inputs/selects with data-cell attribute)
-      const payload = {};
-      document.querySelectorAll('input[data-cell], select[data-cell]').forEach(el => {
-        const addr = el.getAttribute('data-cell');
-        let val = el.value;
-        if (el.type === 'number' && val !== '') val = Number(val);
-        payload[addr] = val;
-      });
+  try {
+    // 1) Gather inputs (all inputs/selects with data-cell attribute)
+    const payload = {};
+    document.querySelectorAll('input[data-cell], select[data-cell]').forEach(el => {
+      const addr = el.getAttribute('data-cell');
+      let val = el.value;
+      if (el.type === 'number' && val !== '') val = Number(val);
+      payload[addr] = val;
+    });
 
-      // 2) POST to our API
-      const res = await fetch(`${API_BASE}/calc`, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(payload)
-      });
+    // 2) POST to our API
+    const res = await fetch(`${API_BASE}/calc`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    });
 
-      if (!res.ok) {
-        const txt = await res.text();
-        alert('Error from server: ' + txt);
-        return;
-      }
-
-      const data = await res.json();
-      // 3) Fill outputs (elements with data-cell but not inputs)
-      document.querySelectorAll('[data-cell]').forEach(el => {
-        const addr = el.getAttribute('data-cell');
-        if (el.tagName === 'INPUT' || el.tagName === 'SELECT') return;
-        if (addr in data) el.textContent = (data[addr] ?? '').toString();
-      });
-
-    } catch (e) {
-      alert('Request failed: ' + e.message);
-    } finally {
-      if (loading) loading.style.display = "none";
+    if (!res.ok) {
+      const txt = await res.text();
+      alert('Error from server: ' + txt);
+      return;
     }
+
+    const data = await res.json();
+    // 3) Fill outputs (elements with data-cell but not inputs)
+    document.querySelectorAll('[data-cell]').forEach(el => {
+      const addr = el.getAttribute('data-cell');
+      if (el.tagName === 'INPUT' || el.tagName === 'SELECT') return;
+      if (addr in data) el.textContent = (data[addr] ?? '').toString();
+    });
+
+    // 🔥 Extra step: stack inputs hide if value == "0" or "*"
+    document.querySelectorAll('.stack input').forEach(inp => {
+      if (inp.value === "0" || inp.value === "*") {
+        inp.style.display = "none";
+      } else {
+        inp.style.display = ""; // reset if not 0/*
+      }
+    });
+
+  } catch (e) {
+    alert('Request failed: ' + e.message);
+  } finally {
+    if (loading) loading.style.display = "none";
   }
-  
+}
+
 // for input hover and click to show the data 
    const tooltip = document.getElementById('tooltip');
   const sideInfo = document.querySelector('.live-tips-side p');
@@ -1572,33 +1647,63 @@ btn.addEventListener('mouseleave', () => {
   }
 })();
 
- document.addEventListener("DOMContentLoaded", () => {
+
+document.addEventListener("DOMContentLoaded", () => {
   const boxImage = document.querySelector(".bottom-right-box img");
   if (!boxImage) return;
 
-  // default image = jo pehle se boxImage me lagi hai
   const defaultSrc = boxImage.src;
 
-  // sab parent blocks (.input-with-unit) ke liye
-  document.querySelectorAll(".input-with-unit").forEach(block => {
-    const preview = block.querySelector(".preview-src")?.src;
-    if (!preview) return;
+  // nearest wrapper dhundo (d-flex bhi include)
+  function getPreviewFor(el) {
+    const wrapper = el.closest(".input-with-unit, .input-width-unit, .select-wrapper, .input-wrapper, .d-flex, #Box") || el;
 
-    // hover par preview
-    block.addEventListener("mouseenter", () => {
-      boxImage.src = preview;
+    // 1) wrapper ke ANDAR preview-src
+    let img = wrapper.querySelector(".preview-src");
+    if (img?.src) return img.src;
+
+    // 2) wrapper ke just baad sibling me (agar wahan diya ho)
+    const sib = wrapper.nextElementSibling;
+    if (sib?.classList?.contains("preview-src") && sib.src) return sib.src;
+
+    return null;
+  }
+
+  // wrappers jinke upar hover se bhi chale
+  const wrappers = document.querySelectorAll(".input-with-unit, .input-width-unit, .select-wrapper, .input-wrapper, .d-flex, #Box");
+  wrappers.forEach(wrapper => {
+    wrapper.addEventListener("mouseenter", () => {
+      const preview = getPreviewFor(wrapper);
+      if (preview) boxImage.src = preview;
     });
+    wrapper.addEventListener("mouseleave", () => {
+      boxImage.src = defaultSrc;
+    });
+  });
 
-    // hover hatne par default wapas
-    block.addEventListener("mouseleave", () => {
+  // un wrappers ke ANDAR fields par direct hover bhi chale
+  const fieldsSel = [
+    ".input-with-unit input", ".input-with-unit select",
+    ".input-width-unit input", ".input-width-unit select",
+    ".select-wrapper input", ".select-wrapper select",
+    ".input-wrapper input", ".input-wrapper select",
+    ".d-flex input", ".d-flex select",
+    "#Box input", "#Box select"
+  ].join(", ");
+
+  document.querySelectorAll(fieldsSel).forEach(field => {
+    field.addEventListener("mouseenter", () => {
+      const preview = getPreviewFor(field);
+      if (preview) boxImage.src = preview;
+    });
+    field.addEventListener("mouseleave", () => {
       boxImage.src = defaultSrc;
     });
   });
 });
 
-
-
 </script>
+
 
 
 
