@@ -11,8 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
-<script src="https://unpkg.com/scrollreveal"></script>
 <link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/scrollreveal"></script>
+
 </head>
 <body>
   <style>
@@ -725,6 +726,7 @@ text-align: center;
    #tipsPanel {
     transition: max-height .3s ease;
   }
+  
   /* Rotate chevron when collapsed */
   .live-tips-side[data-collapsed="true"] .chevron {
     transform: rotate(-90deg);
@@ -732,6 +734,8 @@ text-align: center;
   </style>
   <div class="container-box">
   <div class="main-Container">
+
+</div>
 <div class="header-section">
 <h1 class="project-location">Project location</h1>
 <input class="search-bar" name="project_location" placeholder="" type="text"/>
@@ -745,7 +749,7 @@ text-align: center;
 <div class="main-content">
 <div class="content-area">
 <div class="forms-area">
-<div id="firstCard" class="card-custom" data-sr-id="0">
+<div id="firstCard" class="card-custom" >
 <h5 style="font-weight: 600;" >Dimensions</h5>
 <!-- first-->
 <div class="input-with-unit">
@@ -827,7 +831,7 @@ text-align: center;
 </input>
 </div>
 <!-- first end  -->
-<div id="secondCard" class="card-custom" data-sr-id="2">
+<div id="secondCard" class="card-custom">
 <h5  style="font-weight: 600;"  class="">Roof Details</h5>
 <label class="">Roof shape</label>
 <div class="select-wrapper" >
@@ -882,7 +886,7 @@ text-align: center;
 </div>
 </div>
 <!-- third card -->
-<div id="thirdCard" class="card-custom" data-sr-id="3">
+<div id="thirdCard" class="card-custom" >
 <h5 style="font-weight: 600;" class="">Mounting System Details</h5>
 <label class="">Installation type</label>
 <div class="select-wrapper" >
@@ -1001,7 +1005,7 @@ text-align: center;
     <img style="display: none;" class="preview-src" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="" srcset="">
 </div>
 <!--forth Card  -->
-<div   id="forthCard" class="card-custom" data-sr-id="4">
+<div   id="forthCard" class="card-custom">
 <h5 style="font-weight: 600;">Wind Parameters</h5>
 <!--  add  first box  -->
   <div id="Box" >
@@ -1109,7 +1113,7 @@ text-align: center;
 </div>
 </div>
  <!--table-Section -->
-<div  class="table-section" data-sr-id="5">
+<div  class="table-section" >
 <div class="outer">
   <!-- LEFT: Roof Zone + SLS Pressure -->
   <div>
@@ -1246,7 +1250,7 @@ text-align: center;
 </div>
 
 </div>
-
+ 
 </div>
 </div>
 </div>
@@ -1266,17 +1270,9 @@ text-align: center;
     </div>
   </div>
 </div>
-<button id="openModal">Open Modal</button>
-
-  <div id="modalOverlay" class="modal-overlay d-none">
-    <div class="modal">
-      <h2>Hidden Modal</h2>
-      <p>Yeh modal by default hidden tha.</p>
-      <button class="close-btn" id="closeModal">Close</button>
-    </div>
-  </div>
 
 <script>
+   
     // animations effect
   ScrollReveal({
   distance: '80px',
